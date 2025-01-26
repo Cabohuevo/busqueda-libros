@@ -15,7 +15,6 @@ searchForm.addEventListener('submit', async (e) => {
   currentTitleIsbn = titleIsbnInput.value.trim();
   currentAuthor = authorInput.value.trim();
 
-  // Evita búsquedas vacías
   if (!currentTitleIsbn && !currentAuthor) {
     resultsDiv.innerHTML = '<div class="alert alert-warning">Por favor, ingresa un título/ISBN o un autor para buscar.</div>';
     return;
@@ -28,7 +27,7 @@ searchForm.addEventListener('submit', async (e) => {
   await fetchResults();
 });
 
-// Evento para cargar más resultados
+
 loadMoreBtn.addEventListener('click', async () => {
   currentPage++;
   await fetchResults();
@@ -107,7 +106,8 @@ function displayResults(books) {
   });
 }
 
-// Función para mostrar resultados específicos de ISBN
+// Función para mostrar resultados específicos de ISBN (Se tuvo que usar una direccion diferente de la API ya que no esta soportada en la misma URL que la busqueda por autor o nombre)
+
 function displayISBNResult(book) {
   const bookElement = document.createElement('div');
   bookElement.classList.add('col-12');
