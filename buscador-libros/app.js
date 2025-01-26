@@ -62,7 +62,7 @@ async function fetchResults() {
   }
 }
 
-
+//(Se tuvo que usar una direccion diferente de la API ya que no esta soportada en la misma URL que la busqueda por autor o nombre)
 async function fetchByISBN(isbn) {
   const url = `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`;
   try {
@@ -106,7 +106,7 @@ function displayResults(books) {
   });
 }
 
-// Función para mostrar resultados específicos de ISBN (Se tuvo que usar una direccion diferente de la API ya que no esta soportada en la misma URL que la busqueda por autor o nombre)
+// Función para mostrar resultados específicos de ISBN 
 
 function displayISBNResult(book) {
   const bookElement = document.createElement('div');
